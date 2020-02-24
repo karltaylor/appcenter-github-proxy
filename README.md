@@ -1,6 +1,6 @@
 # AppCenter/Github Lambda Proxy
 
-If you are building whitelabel applications using AppCenter and Github, you will struggle to get past 20 Github Integrations.
+If you are building whitelabel applications using AppCenter and Github, you will struggle to get past 20 webhooks on _one_ Github repository.
 
 More info on this issue is here: 
 
