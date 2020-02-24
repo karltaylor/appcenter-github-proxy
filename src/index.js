@@ -9,7 +9,7 @@ const appSlugs = {
     "Morelands-Staging-Android",
     "Morelands-Staging-iOS",
     "Savving-Staging-Android",
-    "Savvy-Staging-iOS",
+    "Savvy-Staging-iOS"
   ],
   master: []
 };
@@ -33,6 +33,7 @@ exports.handler = async event => {
     const { ref } = event.body;
 
     if (!ref) {
+      console.log("No ref in event.body");
       return {
         statusCode: 400,
         body: "No ref found."
@@ -40,6 +41,8 @@ exports.handler = async event => {
     }
 
     const branch = getBranch(ref);
+
+    console.log(branch);
 
     if (allowedBranches.includes(branch)) {
       const calls = getUrls(branch).map(call =>
@@ -67,6 +70,13 @@ exports.handler = async event => {
       return {
         statusCode: 200,
         body: JSON.stringify({ ok: true })
+      };
+    } else {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({
+          message: `Branch ${branch} is not in allowedBranches, skipping.`
+        })
       };
     }
   } catch (err) {
