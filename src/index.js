@@ -40,19 +40,19 @@ exports.handler = async event => {
           }
         )
       );
-      const stuff = await Promise.all(calls)
+      const SendPOSTRequestsToAppCenter = await Promise.all(calls)
         .then(data => {
-          console.log("HERE", data);
-          return {
-            statusCode: 200,
-            body: JSON.stringify(data)
-          };
+          console.log(data);
+          return data;
         })
         .catch(err => {
           console.log("Here in error", err);
           throw new Error(err);
         });
-      console.log(stuff);
+
+      console.log("Requests:");
+      console.log(SendPOSTRequestsToAppCenter);
+
       return {
         statusCode: 200,
         body: JSON.stringify({ ok: true })
