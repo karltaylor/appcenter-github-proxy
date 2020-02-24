@@ -5,7 +5,7 @@
   "author": "Karl Taylor <karl_taylor@me.com>",
   "license": "MIT",
   "scripts": {
-    "zip": "zip -r fn.zip src",
+    "zip": "zip -r fn.zip src/node_modules src/index.js",
     "deploy": "yarn zip && aws lambda update-function-code --function-name appCenterProxy --zip-file fileb://fn.zip"
   },
   "dependencies": {
