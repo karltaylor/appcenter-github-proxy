@@ -2,10 +2,14 @@ const axios = require("axios");
 
 const appSlugs = {
   staging: [
+    "Abbey-Gardens-Staging-Android",
+    "Abbey-Gardens-Staging-iOS",
+    // "dthree-staging-ios",
+    // "DThree-staging-android",
     "Morelands-Staging-Android",
     "Morelands-Staging-iOS",
     "Savving-Staging-Android",
-    "Savvy-Staging-iOS"
+    "Savvy-Staging-iOS",
   ],
   master: []
 };
