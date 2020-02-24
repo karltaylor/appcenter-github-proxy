@@ -8,3 +8,6 @@ https://github.com/microsoft/appcenter/issues/591
 
 This lambda reads the push event data from Github and fires off a POST request to build your apps on AppCenter.
 
+## Todo
+
+- [ ] Use Branch configuration API to check if the branch has been configured. (API call [here](https://openapi.appcenter.ms/#/build/branchConfigurations_get))
