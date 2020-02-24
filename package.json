@@ -5,7 +5,8 @@
   "author": "Karl Taylor <karl_taylor@me.com>",
   "license": "MIT",
   "scripts": {
-    "deploy": "zip fn.zip index.js && aws lambda update-function-code --function-name appCenterProxy --zip-file fileb://fn.zip"
+    "zip": "zip -r fn.zip src",
+    "deploy": "yarn zip && aws lambda update-function-code --function-name appCenterProxy --zip-file fileb://fn.zip"
   },
   "dependencies": {
     "eslint": "^6.8.0"
