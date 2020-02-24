@@ -28,6 +28,13 @@ exports.handler = async event => {
   try {
     const { ref } = event.body;
 
+    if (!ref) {
+      return {
+        statusCode: 400,
+        body: "No ref found."
+      };
+    }
+
     const branch = getBranch(ref);
 
     if (allowedBranches.includes(branch)) {
