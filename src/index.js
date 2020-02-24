@@ -30,7 +30,10 @@ const getUrls = branch => {
 
 exports.handler = async event => {
   try {
-    const { ref } = event.body;
+    const body = JSON.parse(event.body);
+    const { ref } = body;
+
+    console.log(event);
 
     if (!ref) {
       console.log("No ref in event.body");
